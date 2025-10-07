@@ -4,33 +4,33 @@ import {createStaticNavigation} from '@react-navigation/native';
 import AuthHomeScreen from '../screens/auth/AuthHomeScreen';
 import LoginScreen from '../screens/auth/LoginScreen';
 import SignupScreen from '../screens/auth/SignupScreen';
+import {colors} from '../constants/colors';
 
 const AuthStack = createStackNavigator({
   screenOptions: {
     headerTitleAlign: 'center',
     headerBackButtonDisplayMode: 'minimal',
-    headerTintColor: 'black',
+    headerTintColor: colors.BLACK,
 
     headerStyle: {
-      backgroundColor: 'white',
-      shadowColor: 'gray',
+      backgroundColor: colors.WHITE,
+      shadowColor: colors.GRAY_500,
     },
+
+    headerTitleStyle: {
+      fontWeight: 'bold',
+      fontSize: 18,
+    },
+
     cardStyle: {
-      backgroundColor: 'white',
+      backgroundColor: colors.WHITE,
     },
   },
   screens: {
     AuthHome: {
       screen: AuthHomeScreen,
       options: {
-        headerShown: true,
-        headerTitleStyle: {
-          fontWeight: 'bold',
-          fontSize: 40,
-        },
-        cardStyle: {
-          backgroundColor: 'yellow',
-        },
+        headerShown: false,
       },
     },
     Login: {
@@ -38,15 +38,14 @@ const AuthStack = createStackNavigator({
       options: {
         title: '로그인',
         headerShown: true,
-        headerTitleStyle: {
-          fontWeight: 'bold',
-          fontSize: 20,
-        },
       },
     },
     Signup: {
       screen: SignupScreen,
-      options: {headerShown: true},
+      options: {
+        title: '회원가입',
+        headerShown: true,
+      },
     },
   },
 });

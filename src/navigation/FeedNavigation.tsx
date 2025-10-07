@@ -1,6 +1,3 @@
-import {createDrawerNavigator} from '@react-navigation/drawer';
-import {createStaticNavigation} from '@react-navigation/native';
-
 import FeedListScreen from '../screens/feed/FeedListScreen';
 import FeedDetailScreen from '../screens/feed/FeedDetailScreen';
 import FeedFavoriteScreen from '../screens/feed/FeedFavoriteScreen';
@@ -14,12 +11,21 @@ export const FeedStack = createStackNavigator({
   screens: {
     Feed: {
       screen: FeedListScreen,
+      options: {
+        title: '피드',
+      },
     },
     FeedDetail: {
       screen: FeedDetailScreen,
+      options: {
+        headerShown: false,
+      },
     },
     FeedFavorite: {
       screen: FeedFavoriteScreen,
+      options: {
+        title: '즐겨찾기',
+      },
     },
     EditLocation: {
       screen: EditLocationScreen,

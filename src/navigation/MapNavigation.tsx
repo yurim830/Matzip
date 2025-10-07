@@ -12,12 +12,18 @@ export const MapStack = createStackNavigator({
   screens: {
     MapHome: {
       screen: MapHomeScreen,
+      options: {
+        headerShown: false,
+      }
     },
     AddLocationScreen: {
       screen: AddLocationScreen,
     },
     SearchLocationScreen: {
       screen: SearchLocationScreen,
+      options: {
+        title: '장소 검색',
+      }
     },
   },
 });
