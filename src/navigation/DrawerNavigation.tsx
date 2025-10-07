@@ -5,6 +5,7 @@ import CalendarScreen from '../screens/calendar/CalendarScreen';
 import {MapStack} from './MapNavigation';
 import {FeedStack} from './FeedNavigation';
 import {colors} from '../constants/colors';
+import CustomDrawerContent from '../components/CustomDrawerContent';
 
 const MainDrawer = createDrawerNavigator({
   screenOptions: {
@@ -59,6 +60,7 @@ const MainDrawer = createDrawerNavigator({
       },
     },
   },
+  drawerContent: (props) => <CustomDrawerContent {...props} />,
 });
 
 const DrawerNavigation = createStaticNavigation(MainDrawer);
