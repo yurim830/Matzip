@@ -4,6 +4,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import MapHomeScreen from '../screens/map/MapHomeScreen';
 import AddLocationScreen from '../screens/map/AddLocationScreen';
 import SearchLocationScreen from '../screens/map/SearchLocationScreen';
+import DrawerButton from '../components/DrawerButton';
 
 export const MapStack = createStackNavigator({
   screenOptions: {
@@ -13,7 +14,8 @@ export const MapStack = createStackNavigator({
     MapHome: {
       screen: MapHomeScreen,
       options: {
-        headerShown: false,
+        // headerShown: false,
+        headerLeft: () => <DrawerButton />
       }
     },
     AddLocationScreen: {
